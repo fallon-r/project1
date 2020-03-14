@@ -2,8 +2,7 @@
 
 Sports betting platform 
 
-* [Boggio prediction: averages and odds](https://boggio-analytics.com/fp-api/)
-* [Football data: for stats and dates](https://boggio-analytics.com/fp-api/)
+* (Sports Radar)[https://sportradar.us/]
 * (Paypal sandbox to simulate payments)[https://developer.paypal.com/docs/api-basics/]
 * [Additional Data API](https://www.api-football.com/)
 
