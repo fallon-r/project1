@@ -2,7 +2,16 @@
 
 Sports betting platform 
 
-focus on NBA
+* [Boggio prediction: averages and odds](https://boggio-analytics.com/fp-api/)
+* [Football data: for stats and dates](https://boggio-analytics.com/fp-api/)
+* (Paypal sandbox to simulate payments)[https://developer.paypal.com/docs/api-basics/]
+* [Additional Data API](https://www.api-football.com/)
+
+
+focus on soccer
+
+
+
 
 
 
