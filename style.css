@@ -1,7 +1,32 @@
 body {
     background-color: #222;
+    padding: 10px;
+    color: #fff;
 }
 
 .jumbotron {
-    background-color: #fff;
+    background-color: rgb(207, 147, 56);
+}
+
+#first-league, #second-league {
+    margin-left: 20px;
+    margin-top: 2%;
+}
+
+header, .headlines {
+    text-align: center;
+    color: #fff;
+}
+
+.border-right, .bg-light {
+    background-color: #212529!important;
+    color: white;
+}
+
+.border-right {
+    border-right:  #212529!important;
+}
+
+.card-text {
+    color: #222;
 }
