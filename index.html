@@ -2,22 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    
-</head>
-<body>
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="sportsapi.js"></script>
-=======
-=======
->>>>>>> 211cd88b2253b839c8d13f02c7bfb228921d36c1
     <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
     <title>BetEase</title>    
     <link rel = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
@@ -25,7 +9,7 @@
     <link rel = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel = "stylesheet" href = "style.css">
-
+    <!-- <script href = "sportsapi.js"></script> -->
 </head>
 <body>
     <!--Navbar-->
@@ -40,21 +24,10 @@
           <li class="nav-item">
             <a class="nav-link" href="about.html">About</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="mybets.html">My Bets</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html">Login/Join</a>
-          </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
         
       </div>
     </nav>
-
     <!--Jumbotron-->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -62,13 +35,8 @@
           <p class="lead">Bet in the comfort of your own home!</p>
         </div>
       </div>
-    <header>
-        <h3> Top Event </h3>
-    </header>
-
     <!--sidebar-->
-    <div class="d-flex sidebar" id="wrapper">
-
+    <div class = "d-flex" id="wrapper sports-sidebar">
         <!-- Sidebar -->
         <div class="bg-light border-right sidebar" id="sidebar-wrapper">
           <div class="sidebar-heading"><h5>Sports</h5></div>
@@ -78,8 +46,7 @@
             <a href="#" class="list-group-item list-group-item-action bg-light">Hockey</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Boxing/UFC</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Live In-Play</a>
-
-            <div class="card" style="width: 18rem;">  
+            <div id = "live-event-videos" class="card" style="width: 18rem;">  
                 <img class="card-img-top" src="..." alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text">Watch Live Events</p>
@@ -88,13 +55,14 @@
           </div>
         </div>
         <!-- /#sidebar-wrapper -->
-
     <!--Table Div First League-->
   <div class = "container">
     <div class = "row">
-
+      <header>
+        <h3>Top Events </h3>
+    </header>
     <table id = "first-league" class="table table-striped table-dark">
-        <thead>
+        <thead id = "first-match-up">
           <tr>
             <th scope="col-6">#</th>
             <th scope="col-6">Matchup</th>
@@ -102,115 +70,102 @@
             <th scope="col-6">Team Two Odds</th>
           </tr>
         </thead>
-
         <tbody>
-          <tr>
+          <tr id = "random-matchup-one" data-id="1">
             <th scope="row">1</th>
-            <td></td>
+            <td class="matchOne"></td>
             <td></td>
             <td></td>
           </tr>
-
-          <tr>
+          <tr id = "random-matchup-two" data-id="2">
             <th scope="row">2</th>
-            <td></td>
+            <td class="matchTwo"></td>
             <td></td>
             <td></td>
           </tr>
-
-          <tr>
+          <tr id = "random-matchup-three" data-id="3">
             <th scope="row">3</th>
-            <td></td>
+            <td class="matchThree"></td>
             <td></td>
             <td></td>
                     
-          <tr>
+          <tr id = "random-matchup-four" data-id="4">
             <th scope="row">4</th>
-            <td></td>
+            <td class="matchFour"></td>
             <td></td>
             <td></td>
           </tr>
-
-          <tr>
+          <tr id = "random-matchup-five" data-id="5">
             <th scope="row">5</th>
-            <td></td>
+            <td class="matchFive"></td>
             <td></td>
             <td></td>
           </tr>
-
-          <tr>
+          <tr id = "random-matchup-six" data-id="6">
             <th scope="row">6</th>
-            <td></td>
+            <td class="matchSix"></td>
             <td></td>
             <td></td>      
-
         </tbody>
       </table>
     </div>
-  </div>
-
-    <div class = "container">
-      <div class = "row">
+    <div class = "row">
+      
+      <header>
+      <h3>Other Events </h3>
+      </header>
       <!--Table Div Second League-->
       <table id = "second-league" class="table table-striped table-dark">
         <thead>
-          <tr>
+          <tr id = "second-match-up">
             <th scope="col-6">#</th>
             <th scope="col-6">Matchup</th>
             <th scope="col-6">Team One Odds</th>
             <th scope="col-6">Team Two Odds</th>
           </tr>
         </thead>
-
         <tbody>
-          <tr>
+          <tr id = "second-random-matchup-one" data-id="7">
             <th scope="row">1</th>
             <td></td>
             <td></td>
             <td></td>
           </tr>
-
-          <tr>
+          <tr id = "second-random-matchup-two" data-id="8">
             <th scope="row">2</th>
             <td></td>
             <td></td>
             <td></td>
           </tr>
-
-          <tr>
+          <tr id = "second-random-matchup-three" data-id="9">
             <th scope="row">3</th>
             <td></td>
             <td></td>
             <td></td>
                     
-          <tr>
+          <tr id = "second-random-matchup-four" data-id="10">
             <th scope="row">4</th>
             <td></td>
             <td></td>
             <td></td>
           </tr>
-
-          <tr>
+          <tr id = "second-random-matchup-five" data-id="11">
             <th scope="row">5</th>
             <td></td>
             <td></td>
             <td></td>
           </tr>
-
-          <tr>
+          <tr id = "second-random-matchup-six" data-id="12">
             <th scope="row">6</th>
             <td></td>
             <td></td>
             <td></td>      
-
         </tbody>
       </table>
     </div>
-  </div>
-      <!--Prediction, News, -->
-      <div class="container headlines">
-        <div class="row">
-            <div class= "col-12">
+     <!--Prediction, News, injuries report (May Scrap If Not Enough Time)-->
+     <div class="container headlines">
+      <div class="row">
           <div class="col-sm">
             Input News 1
           </div>
@@ -227,15 +182,16 @@
             Input News 5
           </div>
           <div class="col-sm">
-            Input News 6
+          Input News 6
           </div>
         </div>
-        </div>
       </div>
+    </div>
+  
+     
  
     <!-- Footer -->
     <footer class="page-footer font-small fixed-bottom">
-
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 
           2020 Created by Noah, Raymond, Ryan, Simon
@@ -244,11 +200,8 @@
   
     </footer>
     <!-- Footer -->
-<
-
-<<<<<<< HEAD
->>>>>>> 8d3a56707b961f6bff78ef1f6a044e426a06828f
-=======
->>>>>>> 211cd88b2253b839c8d13f02c7bfb228921d36c1
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="sportsapi.js"></script>
 </body>
 </html>
