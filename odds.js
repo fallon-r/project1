@@ -12,5 +12,12 @@ $.ajax({
     method: "GET"
 }).then(function(response) {
     console.log(response);
-    console.log(queryURL)
+    console.log(queryURL);
+    var nba = JSON.stringify(response.data[5].active);
+    console.log(nba);
+
 });
+
+function sportStatus() {
+
+};
