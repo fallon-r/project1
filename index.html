@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
+    <title>BetEase</title>    
+    <link rel="shortcut icon" type="image/png" href = "favicon.png">
+    <link rel = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+    <link rel = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel = "stylesheet" href = "style.css">
+    <!-- <script href = "sportsapi.js"></script> -->
+</head>
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">BetEase</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>      
+      </div>
+    </nav>
+
+    <!--Jumbotron-->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <div class = "col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1 class="display-4">BetEase</h1>
+            <p class="lead">Bet in the comfort of your own home!</p>
+          </div>
+        </div>
+    </div>
+
+    <!--sidebar-->
+    <div class = "d-flex" id="wrapper sports-sidebar">
+ 
+        <div class="bg-light border-right sidebar" id="sidebar-wrapper">
+          <div class="sidebar-heading"><h5>Sports</h5></div>
+          <div id = "choose-sport" class="list-group list-group-flush">
+            <a href="#" id="basketball" class="list-group-item list-group-item-action bg-light">Basketball</a>
+            <a href="#" id="baseball" class="list-group-item list-group-item-action bg-light">Baseball</a>
+            <a href="#" id="hockey" class="list-group-item list-group-item-action bg-light">Hockey</a>
+            <a href="#" id="ufc" class="list-group-item list-group-item-action bg-light">Boxing/UFC</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Live In-Play</a>
+          </div>
+        </div> 
+    
+
+  <!--Table Div First League-->
+  <div class = "container leagues">
+    <div class = "row">
+      <div class = "col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+      <header>
+        <h3>Top Events </h3>
+      </header>
+
+      <table id = "first-league" class="table table-striped table-dark">
+          <thead id = "first-match-up">
+            <tr>
+              <th scope="col-6">#</th>
+              <th scope="col-6">Matchup</th>
+              <th scope="col-6">Team One Odds</th>
+              <th scope="col-6">Team Two Odds</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id = "random-matchup-one" data-id="1">
+              <th scope="row">1</th>
+              <td class="matchOne"></td>
+              <td class="main-group-set-one-team-odd-1"></td>
+              <td class="main-group-set-one-team-odd-2"></td>
+            </tr>
+            <tr id = "random-matchup-two" data-id="2">
+              <th scope="row">2</th>
+              <td class="matchTwo"></td>
+              <td class="main-group-set-two-team-odd-1"></td>
+              <td class="main-group-set-two-team-odd-2"></td>
+            </tr>
+            <tr id = "random-matchup-three" data-id="3">
+              <th scope="row">3</th>
+              <td class="matchThree"></td>
+              <td class="main-group-set-three-team-odd-1"></td>
+              <td class="main-group-set-three-team-odd-2"></td>
+                      
+            <tr id = "random-matchup-four" data-id="4">
+              <th scope="row">4</th>
+              <td class="matchFour"></td>
+              <td class="main-group-set-four-team-odd-1"></td>
+              <td class="main-group-set-four-team-odd-2"></td>
+            </tr>
+            <tr id = "random-matchup-five" data-id="5">
+              <th scope="row">5</th>
+              <td class="matchFive"></td>
+              <td class="main-group-set-five-team-odd-1"></td>
+              <td class="main-group-set-five-team-odd-2"></td>
+            </tr>
+            <tr id = "random-matchup-six" data-id="6">
+              <th scope="row">6</th>
+              <td class="matchSix"></td>
+              <td class="main-group-set-six-team-odd-1"></td>
+              <td class="main-group-set-six-team-odd-2"></td>      
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class = "row">
+      <div class = "col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+      <header>
+        <h3>Other Events </h3>
+      </header>
+
+        <table id = "second-league" class="table table-striped table-dark">
+          <thead>
+            <tr id = "second-match-up">
+              <th scope="col-6">#</th>
+              <th scope="col-6">Matchup</th>
+              <th scope="col-6">Team One Odds</th>
+              <th scope="col-6">Team Two Odds</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id = "second-random-matchup-one" data-id="7">
+              <th scope="row">1</th>
+              <td class="eventOne event"></td>
+              <td class ="other-group-set-one-team-odd-1" ></td>
+              <td class = "other-group-set-one-team-odd-2"></td>
+            </tr>
+            <tr id = "second-random-matchup-two" data-id="8">
+              <th scope="row">2</th>
+              <td class="eventTwo event"></td>
+              <td class="other-group-set-two-team-odd-1"></td>
+              <td class="other-group-set-two-team-odd-2"></td>
+            </tr>
+            <tr id = "second-random-matchup-three" data-id="9">
+              <th scope="row">3</th>
+              <td class="eventThree event"></td>
+              <td class="other-group-set-three-team-odd-1"></td>
+              <td class="other-group-set-three-team-odd-2"></td>
+                      
+            <tr id = "second-random-matchup-four" data-id="10">
+              <th scope="row">4</th>
+              <td class="eventFour event"></td>
+              <td class="other-group-set-four-team-odd-1"></td>
+              <td class="other-group-set-four-team-odd-2"></td>
+            </tr>
+            <tr id = "second-random-matchup-five" data-id="11">
+              <th scope="row">5</th>
+              <td class="eventFive event"></td>
+              <td class="other-group-set-five-team-odd-1"></td>
+              <td class="other-group-set-five-team-odd-2"></td>
+            </tr>
+            <tr id = "second-random-matchup-six" data-id="12">
+              <th scope="row">6</th>
+              <td class="eventSix event"></td>
+              <td class="other-group-set-six-team-odd-1"></td>
+              <td class="other-group-set-six-team-odd-2"></td>      
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+     
+ 
+    <!-- Footer -->
+    <footer class="page-footer font-small fixed-bottom">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 
+          2020 Created by Noah, Raymond, Ryan, Simon
+        </div>
+    </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="sportsapi.js"></script>
+
+</body>
+
+</html>
