@@ -23,13 +23,13 @@ body {
   }
   .contentTop {
     text-align: center;
-    margin: 30px 30px 30px 30px;
+    margin: 30px 30px 30px 30px
   }
   .content {
     margin: 10px 30px 50px 30px;;
     text-align: center;
-    font: medium
-  }
+    position: sticky;
+      }
   .our-name {
     text-align: center;
     background:  rgb(207, 147, 56);
@@ -37,11 +37,6 @@ body {
     width: 100%;
     bottom: 12px;
     overflow: hidden;
-  }
-
-  .img {
-    max-width: 350px;
-    max-height: 350px;
   }
   
   .our-name h3{
