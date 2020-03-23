@@ -5,10 +5,10 @@
     <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
     <title>BetEase</title>    
     <link rel="shortcut icon" type="image/png" href = "favicon.png">
-    <link rel = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
-    <link rel = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel = "stylesheet" href = "style.css">
     <!-- <script href = "sportsapi.js"></script> -->
 </head>
@@ -40,20 +40,18 @@
         </div>
     </div>
 
+    <div class="heading text-center">
+      <h2>Sports</h2>
+    </div>
     <!--sidebar-->
-    <div class = "d-flex" id="wrapper sports-sidebar">
- 
-        <div class="bg-light border-right sidebar" id="sidebar-wrapper">
-          <div class="sidebar-heading"><h5>Sports</h5></div>
-          <div id = "choose-sport" class="list-group list-group-flush">
-            <a href="#" id="basketball" class="list-group-item list-group-item-action bg-light">Basketball</a>
-            <a href="#" id="baseball" class="list-group-item list-group-item-action bg-light">Baseball</a>
-            <a href="#" id="hockey" class="list-group-item list-group-item-action bg-light">Hockey</a>
-            <a href="#" id="ufc" class="list-group-item list-group-item-action bg-light">Boxing/UFC</a>
-            <a href="#" id="football" class="list-group-item list-group-item-action bg-light">Soccer</a>
-          </div>
-        </div> 
-    
+    <ul id="choose-sport" class="list-group list-group-horizontal-lg list-group-horizontal-md list-group-horizontal-sm">
+      <li class="list-group-item flex-fill list-group-item-action bg-dark text-center"><a class="text-light" href="#" id="basketball">Basketball</a></li>
+      <li class="list-group-item flex-fill list-group-item-action bg-dark text-center"><a class="text-light" href="#" id="baseball">Baseball</a></li>
+      <li class="list-group-item flex-fill list-group-item-action bg-dark text-center"><a class="text-light" href="#" id="hockey">Hockey</a></li>
+      <li class="list-group-item flex-fill list-group-item-action bg-dark text-center"><a class="text-light" href="#" id="ufc">Boxing/UFC</a></li>
+      <li class="list-group-item flex-fill list-group-item-action bg-dark  text-center"><a class="text-light" href="#">Live In-Play</a></li>
+    </ul>
+  
 
   <!--Table Div First League-->
   <div class = "container leagues">
@@ -64,13 +62,13 @@
         <h3>Top Events </h3>
       </header>
 
-      <table id = "first-league" class="table table-striped table-dark">
+      <table id = "first-league" class="table table-striped table-dark col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <thead id = "first-match-up">
             <tr>
-              <th scope="col-6">#</th>
-              <th scope="col-6">Matchup</th>
-              <th scope="col-6">Team One Odds</th>
-              <th scope="col-6">Team Two Odds</th>
+              <th scope = "col">#</th>
+              <th scope = "col">Matchup</th>
+              <th scope = "col">Team One Odds</th>
+              <th scope = "col">Team Two Odds</th>
             </tr>
           </thead>
           <tbody>
@@ -114,7 +112,8 @@
       </div>
     </div>
 
-    <div class = "row">
+<!--unused table-->
+    <!-- <div class = "row">
       <div class = "col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
       <header>
@@ -167,7 +166,7 @@
               <td class="other-group-set-six-team-odd-1"></td>
               <td class="other-group-set-six-team-odd-2"></td>      
           </tbody>
-        </table>
+        </table> -->
       </div>
     </div>
   </div>
