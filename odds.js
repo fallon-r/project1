@@ -5,8 +5,19 @@ var region = navigator.language.slice(3, 5).toLowerCase();
 //Blank array for sport status location
 var sportActivity;
 
+
+// empty var that is updated with button click
+var sport;
 //special URL that returns whether sport is in or out of season.
-var sportStatus = "https://api.the-odds-api.com/v3/sports/?apiKey=" + key + "&all=1"
+var sportStatus = "https://api.the-odds-api.com/v3/sports/?apiKey=" + key + "&all=1";
+
+//empty var that becomes filled with odds 
+var sportOdds;
+
+
+var bettingOddsUrl = "https://api.the-odds-api.com/v3/odds/?apiKey=" + key + "&sport=" + sport + "&region=" + region + "&mkt=h2h";
+
+
 
 function getStatus() {
     $.ajax({
@@ -17,7 +28,6 @@ function getStatus() {
     });
 
 };
-
 
 // The array becomes filled with the status of all sports. they are in alphabetical order so indices are static.
 getStatus();
@@ -40,14 +50,41 @@ function outOfSeason() {
     $(".main-group-set-six-team-odd-2").text("N/A");
 };
 
+//emptier.... empties the odds columns
+function emptier() {
+    $("#first-league").addClass('text-center');
+    $("#first-league").addClass("col-12")
+    $(".main-group-set-one-team-odd-1").empty();
+    $(".main-group-set-one-team-odd-2").empty();
+    $(".main-group-set-two-team-odd-1").empty();
+    $(".main-group-set-two-team-odd-2").empty();
+    $(".main-group-set-three-team-odd-1").empty();
+    $(".main-group-set-three-team-odd-2").empty();
+    $(".main-group-set-four-team-odd-1").empty();
+    $(".main-group-set-four-team-odd-2").empty();
+    $(".main-group-set-five-team-odd-1").empty();
+    $(".main-group-set-five-team-odd-2").empty();
+    $(".main-group-set-six-team-odd-1").empty();
+    $(".main-group-set-six-team-odd-2").empty();
+};
+
 
 // returns betting odds for baseball
 function mlb() {
     // check sport status 
     if (sportActivity.data[3].active === true) {
         console.log("baseball is back")
+        sport = "baseball_mlb";
+        $.ajax({
+            url: "https://api.the-odds-api.com/v3/odds/?apiKey=" + key + "&sport=" + sport + "&region=" + region + "&mkt=h2h",
+            method: "GET"
+        }).then(function(odds) {
+            console.log(odds)
+        });
+
     } else {
         //if sport is not active, returns n/a
+
         outOfSeason();
     }
 
@@ -59,6 +96,15 @@ function mlb() {
 function nba() {
     if (sportActivity.data[5].active === true) {
         console.log("basketball's in season");
+        emptier();
+        sport = "basketball_nba";
+        $.ajax({
+            url: "https://api.the-odds-api.com/v3/odds/?apiKey=" + key + "&sport=" + sport + "&region=" + region + "&mkt=h2h",
+            method: "GET"
+        }).then(function(odds) {
+            console.log(odds)
+        });
+
     } else {
         //if sport is not active, returns n/a
         outOfSeason();
@@ -69,7 +115,15 @@ function nba() {
 // returns betting odds for hockey 
 function nhl() {
     if (sportActivity.data[16].active === true) {
-        console.log("basketball's in season");
+        emptier();
+        sport = "icehockey_nhl";
+        $.ajax({
+            url: "https://api.the-odds-api.com/v3/odds/?apiKey=" + key + "&sport=" + sport + "&region=" + region + "&mkt=h2h",
+            method: "GET"
+        }).then(function(odds) {
+            console.log(odds)
+        });
+
     } else {
         //if sport is not active, returns n/a
         outOfSeason();
@@ -79,7 +133,14 @@ function nhl() {
 
 function ufc() {
     if (sportActivity.data[17].active === true) {
-        console.log("ufc's in season");
+        emptier();
+        sport = "mma_mixed_martial_arts";
+        $.ajax({
+            url: "https://api.the-odds-api.com/v3/odds/?apiKey=" + key + "&sport=" + sport + "&region=" + region + "&mkt=h2h",
+            method: "GET"
+        }).then(function(odds) {
+            console.log(odds)
+        });
     } else {
         //if sport is not active, returns n/a
         outOfSeason();
@@ -155,3 +216,19 @@ $("#ufc").click(function(event) {
         $(this).css("background-position", "center center");
     })
 });
+
+
+function ufcOddsGen() {
+    console.log(bettingOddsUrl);
+}
+
+// gets odds for various matches
+function getOdds() {
+    $.ajax({
+        url: bettingOddsUrl,
+        method: "GET"
+    }).then(function(response) {
+        sportOdds = response;
+        console.log(response);
+    })
+};
