@@ -1,21 +1,26 @@
 body {
     background-color: #222;
-    padding: 10px;
     color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
 }
 
 .jumbotron {
     background-color: rgb(207, 147, 56);
 }
 
-#first-league, #second-league {
-    margin-left: 20px;
-    margin-top: 2%;
+.heading {
+    margin-top: -30px;
 }
 
+#choose-sport {
+    margin-top: -32px;
+    width: 100%;
+}
 header, .headlines {
     text-align: center;
     color: #fff;
+    margin-top: 10%;
 }
 
 .border-right, .bg-light {
@@ -28,11 +33,24 @@ header, .headlines {
     padding: 20px;
 }
 
+tr {
+    text-align: center;
+    width: 100%;
+}
 .card-text {
     color: #222;
 }
 
-.leagues {
+.table{
     width: 100%;
+    overflow-x: scroll;
+}
+
+footer {
+    position: fixed;
+}
+
+.fixed-bottom {
+    margin-top: auto;
 }
 
