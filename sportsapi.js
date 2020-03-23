@@ -53,7 +53,6 @@ function football() {
         $(".matchFive").append(matchup5);
         $(".matchSix").append(matchup6);
 
-
     });
 }
 
