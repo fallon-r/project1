@@ -70,7 +70,7 @@ function emptier() {
 
 
 // returns betting odds for baseball
-function mlb() {
+function mlbOdds() {
     // check sport status 
     if (sportActivity.data[3].active === true) {
         console.log("baseball is back")
@@ -93,7 +93,7 @@ function mlb() {
 };
 
 // returns betting odds for nba
-function nba() {
+function nbaOdds() {
     if (sportActivity.data[5].active === true) {
         console.log("basketball's in season");
         emptier();
@@ -113,7 +113,7 @@ function nba() {
 };
 
 // returns betting odds for hockey 
-function nhl() {
+function nhlOdds() {
     if (sportActivity.data[16].active === true) {
         emptier();
         sport = "icehockey_nhl";
@@ -131,7 +131,7 @@ function nhl() {
     }
 };
 
-function ufc() {
+function ufcOdds() {
     if (sportActivity.data[17].active === true) {
         emptier();
         sport = "mma_mixed_martial_arts";
@@ -192,7 +192,7 @@ $("#football").click(function(event) {
 
 $("#hockey").click(function(event) {
     event.preventDefault();
-    nhl();
+    nhlOdds();
 
     //adds hockey image to jumbotron
 
@@ -206,7 +206,7 @@ $("#hockey").click(function(event) {
 
 $("#ufc").click(function(event) {
     event.preventDefault();
-    ufc();
+    ufcOdds();
     //adds UFC image to jumbotron
 
     $(".jumbotron").fadeIn("slow", function() {
