@@ -208,7 +208,7 @@ $("#ufc").click(function(event) {
     event.preventDefault();
     ufcOdds();
     //adds UFC image to jumbotron
-
+    console.log("ufc click")
     $(".jumbotron").fadeIn("slow", function() {
         $(this).css("background-image", "url('https://dmxg5wxfqgb4u.cloudfront.net/styles/background_image_xl/s3/2019-08/generic%20octagon%20hero.jpg?dguoinDzwlqytcB8FuAKPeX0xkPsTvh0&itok=o_g2w3o_'");
         $(this).css("background-size", "cover");
