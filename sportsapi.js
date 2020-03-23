@@ -14,6 +14,9 @@ function football() {
         dataType: "json",
         headers: { "X-Auth-Token": "ed4192ef5c68440da68e438c9027d090" }
     }).then(function(response) {
+        if(response.count>0){
+            console.log(response.count);
+        console.log(response);
 
         var awayteam1 = response.matches[0].awayTeam.name;
         var hometeam1 = response.matches[0].homeTeam.name;
@@ -52,7 +55,18 @@ function football() {
         $(".matchFour").append(matchup4);
         $(".matchFive").append(matchup5);
         $(".matchSix").append(matchup6);
-    });
+
+    }else{
+
+    $(".matchOne").text("N/A");
+    $(".matchTwo").text("N/A");
+    $(".matchThree").text("N/A");
+    $(".matchFour").text("N/A");
+    $(".matchFive").text("N/A");
+    $(".matchSix").text("N/A");
+
+}
+});
 }
 
 football();
@@ -65,6 +79,9 @@ function nba() {
         method: "GET",
         dataType: "json"
     }).then(function(response) {
+        console.log(response);
+        if(response.games > 0){
+
 
         var eventMatchup1 = response.games[0].home.name + " vs " + response.games[0].away.name + " (" + (response.games[0].status) + ")";
 
@@ -85,7 +102,16 @@ function nba() {
         $(".matchFive").append(eventMatchup5);
         $(".matchSix").append(eventMatchup6);
 
-    });
+    }else{
+
+        $(".matchOne").text("N/A");
+        $(".matchTwo").text("N/A");
+        $(".matchThree").text("N/A");
+        $(".matchFour").text("N/A");
+        $(".matchFive").text("N/A");
+        $(".matchSix").text("N/A");
+
+    }});
 }
 
 function mlb() {
@@ -94,6 +120,8 @@ function mlb() {
         method: "GET",
         dataType: "json"
     }).then(function(response) {
+        console.log(response);
+        if(response.games > 0){
 
         var eventMatchup1 = response.games[0].home.name + " vs " + response.games[0].away.name + " (" + (response.games[0].status) + ")";
 
@@ -114,7 +142,16 @@ function mlb() {
         $(".matchFive").append(eventMatchup5);
         $(".matchSix").append(eventMatchup6);
 
-    });
+    }else{
+
+        $(".matchOne").text("N/A");
+        $(".matchTwo").text("N/A");
+        $(".matchThree").text("N/A");
+        $(".matchFour").text("N/A");
+        $(".matchFive").text("N/A");
+        $(".matchSix").text("N/A");
+
+    }});
 }
 
 function nhl() {
@@ -123,6 +160,8 @@ function nhl() {
         method: "GET",
         dataType: "json"
     }).then(function(response) {
+        console.log(response);
+        if(response.games > 0){
 
         var eventMatchup1 = response.games[0].home.name + " vs " + response.games[0].away.name + " (" + (response.games[0].status) + ")";
 
@@ -143,17 +182,28 @@ function nhl() {
         $(".matchFive").append(eventMatchup5);
         $(".matchSix").append(eventMatchup6);
 
-    });
+    }else{
+
+        $(".matchOne").text("N/A");
+        $(".matchTwo").text("N/A");
+        $(".matchThree").text("N/A");
+        $(".matchFour").text("N/A");
+        $(".matchFive").text("N/A");
+        $(".matchSix").text("N/A");
+
+    }});
 }
 
 function ufc() {
     $.ajax({
-        url: 'https://cors-anywhere.herokuapp.com/https://api.sportradar.us/ufc/trial/v2/en/schedules/' + year + '-' + month + '-' + day + '/summaries.json?api_key=ss49nxeh872xe6vav8whqgaz',
+        url: 'https://cors-anywhere.herokuapp.com/https://api.sportradar.us/ufc/trial/v2/en/competitions.json?api_key=ss49nxeh872xe6vav8whqgaz',
         method: "GET",
         dataType: "json"
     }).then(function(response) {
+        console.log(response);
+        if(response.games > 0){
 
-        var eventMatchup1 = response.games[0].home.name + " vs " + response.games[0].away.name + " (" + (response.games[0].status) + ")";
+        var eventMatchup1 = response.game[0].home.name + " vs " + response.games[0].away.name + " (" + (response.games[0].status) + ")";
 
         var eventMatchup2 = response.games[1].home.name + " vs " + response.games[1].away.name + " (" + (response.games[1].status) + ")";
 
@@ -172,40 +222,44 @@ function ufc() {
         $(".matchFive").append(eventMatchup5);
         $(".matchSix").append(eventMatchup6);
 
-    });
+    }else{
+
+        $(".matchOne").text("N/A");
+        $(".matchTwo").text("N/A");
+        $(".matchThree").text("N/A");
+        $(".matchFour").text("N/A");
+        $(".matchFive").text("N/A");
+        $(".matchSix").text("N/A");
+
+    }});
 }
 
 $("#football").on("click", function(event) {
     event.preventDefault();
     $(".match").empty();
     football();
-    tableFocus.scrollIntoView({ behavior: "smooth" });
 });
 
 $("#basketball").on("click", function(event) {
-    event.preventDefault();
+    event.preventDefault();   
     $(".match").empty();
     nba();
-    tableFocus.scrollIntoView({ behavior: "smooth" });
 });
 
 $("#baseball").on("click", function(event) {
     event.preventDefault();
     $(".match").empty();
     mlb();
-    tableFocus.scrollIntoView({ behavior: "smooth" });
 });
 
 $("#hockey").on("click", function(event) {
     event.preventDefault();
     $(".match").empty();
     nhl();
-    tableFocus.scrollIntoView({ behavior: "smooth" });
 });
 
 $("#ufc").on("click", function(event) {
     event.preventDefault();
     $(".match").empty();
     ufc();
-    tableFocus.scrollIntoView({ behavior: "smooth" });
 });
