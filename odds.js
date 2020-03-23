@@ -132,14 +132,26 @@ function nhlOdds() {
 };
 
 function footballOdds() {
-    if (sportActivity.data[17].active === true) {
+    if (sportActivity.data[35].active === true) {
         emptier();
-        sport = "soccer";
+        sport = "soccer_epl";
         $.ajax({
             url: "https://api.the-odds-api.com/v3/odds/?apiKey=" + key + "&sport=" + sport + "&region=" + region + "&mkt=h2h",
             method: "GET"
         }).then(function(odds) {
-            console.log(odds)
+            console.log(odds);
+            $(".main-group-set-one-team-odd-1").empty();
+            $(".main-group-set-one-team-odd-2").empty();
+            $(".main-group-set-two-team-odd-1").empty();
+            $(".main-group-set-two-team-odd-2").empty();
+            $(".main-group-set-three-team-odd-1").empty();
+            $(".main-group-set-three-team-odd-2").empty();
+            $(".main-group-set-four-team-odd-1").empty();
+            $(".main-group-set-four-team-odd-2").empty();
+            $(".main-group-set-five-team-odd-1").empty();
+            $(".main-group-set-five-team-odd-2").empty();
+            $(".main-group-set-six-team-odd-1").empty();
+            $(".main-group-set-six-team-odd-2").empty();
         });
     } else {
         //if sport is not active, returns n/a
@@ -207,8 +219,9 @@ $("#hockey").click(function(event) {
 $("#football").click(function(event) {
     event.preventDefault();
     footballOdds();
-    //adds UFC image to jumbotron
-    console.log("ufc click")
+    //adds soccer image to jumbotron
+    console.log("football click click");
+    console.log(bettingOddsUrl);
     $(".jumbotron").fadeIn("slow", function() {
         $(this).css("background-image", "url('https://www.ncaa.com/sites/default/files/public/images/2019-07-22/Best-college-soccer-stadiums.png'");
         $(this).css("background-size", "cover");
