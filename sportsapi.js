@@ -2,7 +2,6 @@ var today = new Date();
 var year = today.getFullYear();
 var month = (today.getMonth() + 1);
 var day = today.getDate();
-var tableFocus = document.getElementById("first-league");
 
 function football() {
 
@@ -13,7 +12,8 @@ function football() {
         method: "GET",
         dataType: "json",
         headers: { "X-Auth-Token": "ed4192ef5c68440da68e438c9027d090" }
-    }).then(function(response) {
+    }).then(function (response) {
+        console.log(response);
 
         var awayteam1 = response.matches[0].awayTeam.name;
         var hometeam1 = response.matches[0].homeTeam.name;
@@ -52,19 +52,19 @@ function football() {
         $(".matchFour").append(matchup4);
         $(".matchFive").append(matchup5);
         $(".matchSix").append(matchup6);
+
     });
 }
 
 football();
-
-
 
 function nba() {
     $.ajax({
         url: 'https://cors-anywhere.herokuapp.com/https://api.sportradar.us/nba/trial/v7/en/games/' + year + '/' + month + '/' + day + '/schedule.json?api_key=a8bxc8umhxyda8m8tyx4gtk5',
         method: "GET",
         dataType: "json"
-    }).then(function(response) {
+    }).then(function (response) {
+        console.log(response);
 
         var eventMatchup1 = response.games[0].home.name + " vs " + response.games[0].away.name + " (" + (response.games[0].status) + ")";
 
@@ -84,7 +84,6 @@ function nba() {
         $(".matchFour").append(eventMatchup4);
         $(".matchFive").append(eventMatchup5);
         $(".matchSix").append(eventMatchup6);
-
     });
 }
 
@@ -93,7 +92,8 @@ function mlb() {
         url: 'https://cors-anywhere.herokuapp.com/https://api.sportradar.us/mlb/trial/v7/en/games/' + year + '/' + month + '/' + day + '/schedule.json?api_key=3waqtxkkfutrcenmdxxbeprz',
         method: "GET",
         dataType: "json"
-    }).then(function(response) {
+    }).then(function (response) {
+        console.log(response);
 
         var eventMatchup1 = response.games[0].home.name + " vs " + response.games[0].away.name + " (" + (response.games[0].status) + ")";
 
@@ -122,7 +122,8 @@ function nhl() {
         url: 'https://cors-anywhere.herokuapp.com/https://api.sportradar.us/nhl/trial/v7/en/games/' + year + '/' + month + '/' + day + '/schedule.json?api_key=cgcrybxx2k8cdpa4u5ckga6x',
         method: "GET",
         dataType: "json"
-    }).then(function(response) {
+    }).then(function (response) {
+        console.log(response);
 
         var eventMatchup1 = response.games[0].home.name + " vs " + response.games[0].away.name + " (" + (response.games[0].status) + ")";
 
@@ -146,66 +147,26 @@ function nhl() {
     });
 }
 
-function ufc() {
-    $.ajax({
-        url: 'https://cors-anywhere.herokuapp.com/https://api.sportradar.us/ufc/trial/v2/en/schedules/' + year + '-' + month + '-' + day + '/summaries.json?api_key=ss49nxeh872xe6vav8whqgaz',
-        method: "GET",
-        dataType: "json"
-    }).then(function(response) {
-
-        var eventMatchup1 = response.games[0].home.name + " vs " + response.games[0].away.name + " (" + (response.games[0].status) + ")";
-
-        var eventMatchup2 = response.games[1].home.name + " vs " + response.games[1].away.name + " (" + (response.games[1].status) + ")";
-
-        var eventMatchup3 = response.games[2].home.name + " vs " + response.games[2].away.name + " (" + (response.games[2].status) + ")";
-
-        var eventMatchup4 = response.games[3].home.name + " vs " + response.games[3].away.name + " (" + (response.games[3].status) + ")";
-
-        var eventMatchup5 = response.games[4].home.name + " vs " + response.games[4].away.name + " (" + (response.games[4].status) + ")";
-
-        var eventMatchup6 = response.games[5].home.name + " vs " + response.games[5].away.name + " (" + (response.games[5].status) + ")";
-
-        $(".matchOne").append(eventMatchup1);
-        $(".matchTwo").append(eventMatchup2);
-        $(".matchThree").append(eventMatchup3);
-        $(".matchFour").append(eventMatchup4);
-        $(".matchFive").append(eventMatchup5);
-        $(".matchSix").append(eventMatchup6);
-
-    });
-}
-
-$("#football").on("click", function(event) {
+$("#football").on("click", function (event) {
     event.preventDefault();
     $(".match").empty();
     football();
-    tableFocus.scrollIntoView({ behavior: "smooth" });
 });
 
-$("#basketball").on("click", function(event) {
+$("#basketball").on("click", function (event) {
     event.preventDefault();
     $(".match").empty();
     nba();
-    tableFocus.scrollIntoView({ behavior: "smooth" });
 });
 
-$("#baseball").on("click", function(event) {
+$("#baseball").on("click", function (event) {
     event.preventDefault();
     $(".match").empty();
     mlb();
-    tableFocus.scrollIntoView({ behavior: "smooth" });
 });
 
-$("#hockey").on("click", function(event) {
+$("#hockey").on("click", function (event) {
     event.preventDefault();
     $(".match").empty();
     nhl();
-    tableFocus.scrollIntoView({ behavior: "smooth" });
-});
-
-$("#ufc").on("click", function(event) {
-    event.preventDefault();
-    $(".match").empty();
-    ufc();
-    tableFocus.scrollIntoView({ behavior: "smooth" });
 });

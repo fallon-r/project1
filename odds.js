@@ -131,10 +131,10 @@ function nhlOdds() {
     }
 };
 
-function ufcOdds() {
+function footballOdds() {
     if (sportActivity.data[17].active === true) {
         emptier();
-        sport = "mma_mixed_martial_arts";
+        sport = "soccer";
         $.ajax({
             url: "https://api.the-odds-api.com/v3/odds/?apiKey=" + key + "&sport=" + sport + "&region=" + region + "&mkt=h2h",
             method: "GET"
@@ -204,13 +204,13 @@ $("#hockey").click(function(event) {
     })
 });
 
-$("#ufc").click(function(event) {
+$("#football").click(function(event) {
     event.preventDefault();
-    ufcOdds();
+    footballOdds();
     //adds UFC image to jumbotron
-
+    console.log("ufc click")
     $(".jumbotron").fadeIn("slow", function() {
-        $(this).css("background-image", "url('https://dmxg5wxfqgb4u.cloudfront.net/styles/background_image_xl/s3/2019-08/generic%20octagon%20hero.jpg?dguoinDzwlqytcB8FuAKPeX0xkPsTvh0&itok=o_g2w3o_'");
+        $(this).css("background-image", "url('https://www.ncaa.com/sites/default/files/public/images/2019-07-22/Best-college-soccer-stadiums.png'");
         $(this).css("background-size", "cover");
         $(this).css("background-repeat", "no-repeat");
         $(this).css("background-position", "center center");
@@ -218,7 +218,7 @@ $("#ufc").click(function(event) {
 });
 
 
-function ufcOddsGen() {
+function footballOddsGen() {
     console.log(bettingOddsUrl);
 }
 

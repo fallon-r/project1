@@ -1,38 +1,336 @@
 body {
     background-color: #222;
-    padding: 10px;
     color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: scroll;
 }
 
 .jumbotron {
     background-color: rgb(207, 147, 56);
 }
 
-#first-league, #second-league {
-    margin-left: 20px;
-    margin-top: 2%;
+.heading {
+    margin-top: -30px;
 }
 
-header, .headlines {
+#choose-sport {
+    margin-top: -32px;
+    width: 100%;
+}
+
+header,
+.headlines {
     text-align: center;
     color: #fff;
+    margin-top: 3%;
 }
 
-.border-right, .bg-light {
+.border-right,
+.bg-light {
     background-color: #212529!important;
     color: white;
 }
 
 .border-right {
-    border-right:  #212529!important;
+    border-right: #212529!important;
     padding: 20px;
+}
+
+tr {
+    text-align: center;
+    width: 100%;
 }
 
 .card-text {
     color: #222;
 }
 
-.leagues {
+.table {
     width: 100%;
 }
 
+footer {
+    position: fixed;
+    width: 100%;
+}
+
+.fixed-bottom {
+    margin-top: auto;
+}
+
+body {
+    background-color: #333;
+}
+
+.jumbotron {
+    background-color: rgb(207, 147, 56);
+}
+
+.writtenContent {
+    color: white;
+    text-align: center;
+}
+
+.teamBackground {
+    background: url(img/card_background_p1.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/* Card seperation */
+
+.port-image {
+    margin: 20px auto;
+}
+
+.cardBackground {
+    background-repeat: no-repeat;
+}
+
+.contentTop {
+    text-align: center;
+    margin: 30px 30px 30px 30px;
+}
+
+.content {
+    margin: 10px 30px 50px 30px;
+    ;
+    text-align: center;
+    font: medium
+}
+
+.our-name {
+    text-align: center;
+    background: rgb(207, 147, 56);
+    padding: 16px 1px;
+    width: 100%;
+    bottom: 12px;
+    overflow: hidden;
+}
+
+.img {
+    max-width: 350px;
+    max-height: 350px;
+}
+
+.our-name h3 {
+    margin-bottom: 0px;
+    color: #FFF;
+    font-family: "Times New Roman", Times, serif;
+}
+
+
+/* Navbar */
+
+.navbar {
+    position: relative;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background-color: rgb(207, 147, 56);
+    color: black;
+}
+
+
+/* Center logo */
+
+.navbar-brand {
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav-link {
+    float: right;
+}
+
+
+/* Footer  */
+
+
+/* Main Footer */
+
+footer .main-footer {
+    padding: 20px 0;
+    background: #252525;
+    font-size: small;
+}
+
+footer ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+
+/* Footer Top */
+
+.footer-top {
+    background: #252525;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #222;
+}
+
+
+/* Footer transparent */
+
+footer.transparent .footer-top,
+footer.transparent .main-footer {
+    background: transparent;
+}
+
+footer.transparent .footer-copyright {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+}
+
+
+/* Footer 4 */
+
+.footer- .logo {
+    display: inline-block;
+}
+
+
+/*==================== 
+	Widgets 
+====================== */
+
+.widget {
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.widget.widget-last {
+    margin-bottom: 0px;
+}
+
+.widget.no-box {
+    padding: 0;
+    background-color: transparent;
+    margin-bottom: 40px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+}
+
+.widget.subscribe p {
+    margin-bottom: 18px;
+}
+
+.widget li a {
+    color: rgb(207, 147, 56);
+}
+
+.widget li a:hover {
+    color: grey;
+}
+
+.widget-title {
+    margin-bottom: 20px;
+}
+
+.widget-title span {
+    background: #839FAD none repeat scroll 0 0;
+    display: block;
+    height: 1px;
+    margin-top: 25px;
+    position: relative;
+    width: 20%;
+}
+
+.widget-title span::after {
+    background: inherit;
+    content: "";
+    height: inherit;
+    position: absolute;
+    top: -4px;
+    width: 50%;
+}
+
+.widget-title.text-center span,
+.widget-title.text-center span::after {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.widget .badge {
+    float: right;
+    background: #7f7f7f;
+}
+
+.typo-light h1,
+.typo-light h2,
+.typo-light h3,
+.typo-light h4,
+.typo-light h5,
+.typo-light h6,
+.typo-light p,
+.typo-light div,
+.typo-light span,
+.typo-light small {
+    color: #fff;
+}
+
+ul.social-footer2 {
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+ul.social-footer2 li {
+    display: inline-block;
+    padding: 0;
+}
+
+ul.social-footer2 li a:hover {
+    background-color: rgb(207, 147, 56);
+}
+
+ul.social-footer2 li a {
+    display: block;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+
+.btn {
+    background-color: rgb(207, 147, 56);
+    color: #fff;
+}
+
+.btn:hover,
+.btn:focus,
+.btn.active {
+    background: grey;
+    color: #fff;
+    -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    -webkit-transition: all 250ms ease-in-out 0s;
+    -moz-transition: all 250ms ease-in-out 0s;
+    -ms-transition: all 250ms ease-in-out 0s;
+    -o-transition: all 250ms ease-in-out 0s;
+    transition: all 250ms ease-in-out 0s;
+}
